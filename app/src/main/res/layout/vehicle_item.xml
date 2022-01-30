@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+    <com.google.android.material.card.MaterialCardView
+        android:padding="24dp"
+        android:id="@+id/carItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_margin="24dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/car_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/car_image"
+                    android:layout_width="130dp"
+                    android:layout_height="100dp"
+                    android:padding="12dp"
+                    android:src="@drawable/car2" />
+
+                <TextView
+                    android:id="@+id/car_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/car_image"
+                    android:padding="12dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    tool:text="@tools:sample/cities" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/fleet_type"
+                    style="@style/TextAppearance.MaterialComponents.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/car_address"
+                    android:layout_alignParentEnd="true"
+                    android:background="@android:color/holo_blue_dark"
+                    android:padding="4dp"
+                    android:textColor="@color/white"
+                    tool:text="Pooling" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:background="@color/primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/car_details"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/direction_arrow"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_north_24dp"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:textColor="@color/white"
+                    android:id="@+id/direction_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    tool:text="Heading East" />
+            </LinearLayout>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

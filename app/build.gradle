@@ -1,0 +1,102 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'dagger.hilt.android.plugin'
+    id 'org.jetbrains.dokka'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.dwarshb.freenowsample"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+
+    tasks.dokkaHtml.configure {
+        outputDirectory.set(file("../documentation/html"))
+    }
+
+    dokkaHtml.configure {
+        moduleName.set("FreeNow Sample")
+        suppressInheritedMembers.set(true)
+        dokkaSourceSets {
+            named("main") {
+                suppress.set(false)
+                includeNonPublic.set(false)
+                noAndroidSdkLink.set(false)
+                skipDeprecated.set(true)
+                skipEmptyPackages.set(true)
+                sourceRoots.from(file("src"))
+            }
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    //required to use Espresso Test
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.4.0'
+    //UI Automator
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+    // required if you want to use Mockito for unit tests
+    testImplementation 'org.mockito:mockito-core:3.7.7'
+    // required if you want to use Mockito for Android tests
+    androidTestImplementation 'org.mockito:mockito-android:3.7.7'
+
+
+    //Co-routines Dependency
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
+
+    //Hilt Dependencies
+    implementation 'com.google.dagger:hilt-android:2.35'
+    kapt 'com.google.dagger:hilt-android-compiler:2.35'
+
+    //Retrofit Dependencies
+    implementation"com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+
+    //Google Play Services
+    implementation "com.google.android.gms:play-services-places:$playServicesVersion"
+    implementation "com.google.android.gms:play-services-maps:$playServicesVersion"
+    implementation "com.google.maps.android:android-maps-utils:0.4+"
+    implementation "com.google.android.gms:play-services-location:$playServicesVersion"
+
+    dokkaGfmPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.6.10")
+}

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">FreeNowSample</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="pooling">POOLING</string>
+    <string name="north">Heading North</string>
+    <string name="north_west">Heading North West</string>
+    <string name="west">Heading West</string>
+    <string name="south_west">Heading South West</string>
+    <string name="south">Heading South</string>
+    <string name="south_east">Heading South East</string>
+    <string name="north_east">Heading North East</string>
+    <string name="title_vehicle">Vehicles</string>
+    <string name="filter_by">Filter By:</string>
+    <string name="taxi">TAXI</string>
+    <string name="all">ALL</string>
+    <string name="fleet_type">Fleet Type</string>
+    <string name="heading_direction">Filter Heading Direction</string>
+
+    <array name="heading_directions">
+        <item>All</item>
+        <item>Heading North</item>
+        <item>Heading North West</item>
+        <item>Heading West</item>
+        <item>Heading South West</item>
+        <item>Heading South</item>
+        <item>Heading South East</item>
+        <item>Heading North East</item>
+    </array>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="refer_earn">Refer &amp; Earn</string>
+    <string name="offers">Offers</string>
+    <string name="your_rides">Your Rides</string>
+</resources>
