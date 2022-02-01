@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/navigation_vehicle"
-        android:name="com.dwarshb.freenowsample.presentation.mainScreen.ui.vehicle.VehicleListFragment"
+        android:name="com.dwarshb.commute.presentation.mainScreen.ui.vehicle.VehicleListFragment"
         android:label="@string/title_vehicle"
         tools:layout="@layout/fragment_vehicle" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.dwarshb.freenowsample.presentation.mainScreen.ui.dashboard.DashboardFragment"
+        android:name="com.dwarshb.commute.presentation.mainScreen.ui.dashboard.DashboardFragment"
         tools:layout="@layout/fragment_dashboard" />
 </navigation>
