@@ -38,11 +38,11 @@ android {
     }
 
     tasks.dokkaHtml.configure {
-        outputDirectory.set(file("../documentation/html"))
+        outputDirectory.set(file("../docs/html"))
     }
 
     dokkaHtml.configure {
-        moduleName.set("FreeNow Sample")
+        moduleName.set("Commute")
         suppressInheritedMembers.set(true)
         dokkaSourceSets {
             named("main") {
